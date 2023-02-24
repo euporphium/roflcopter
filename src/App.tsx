@@ -17,38 +17,83 @@ export default function App() {
   });
 
   return (
-    <main className="min-h-screen bg-zinc-900 text-zinc-400">
-      <form>
-        <label htmlFor="imageUrl">Image Url</label>
-        <input type="text" id="imageUrl" {...register('imageUrl')} />
+    <main className="min-h-screen bg-zinc-900 px-4 py-6 text-zinc-500">
+      <h1 className="mb-2 text-center text-3xl">Meme Generator</h1>
+      <form className="auto mx-auto max-w-6xl">
+        <div className="flex flex-col">
+          <label htmlFor="imageUrl">Image Url</label>
+          <input
+            type="text"
+            id="imageUrl"
+            {...register('imageUrl')}
+            className="rounded bg-zinc-300 px-2 py-1"
+          />
+        </div>
 
-        <label htmlFor="topText">Top Text</label>
-        <input type="text" id="topText" {...register('topText')} />
+        <div className="my-4 grid gap-4 sm:grid-cols-2">
+          <div className="flex flex-col">
+            <label htmlFor="topText">Top Text</label>
+            <input
+              type="text"
+              id="topText"
+              {...register('topText')}
+              className="rounded bg-zinc-300 px-2 py-1"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="topTextColor">Top Text Color</label>
+            <input
+              type="text"
+              id="topTextColor"
+              {...register('topTextColor')}
+              className="rounded bg-zinc-300 px-2 py-1"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="bottomText">Bottom Text</label>
+            <input
+              type="text"
+              id="bottomText"
+              {...register('bottomText')}
+              className="rounded bg-zinc-300 px-2 py-1"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="bottomTextColor">Bottom Text Color</label>
+            <input
+              type="text"
+              id="bottomTextColor"
+              {...register('bottomTextColor')}
+              className="rounded bg-zinc-300 px-2 py-1"
+            />
+          </div>
+        </div>
 
-        <label htmlFor="bottomText">Bottom Text</label>
-        <input type="text" id="bottomText" {...register('bottomText')} />
+        <div className="flex flex-col">
+          <label htmlFor="scale">Scale</label>
+          <input
+            type="number"
+            step={0.01}
+            id="scale"
+            {...register('scale')}
+            className="rounded bg-zinc-300 px-2 py-1"
+          />
+        </div>
 
-        <label htmlFor="topTextColor">Top Text Color</label>
-        <input type="text" id="topTextColor" {...register('topTextColor')} />
-
-        <label htmlFor="bottomTextColor">Top Text Color</label>
-        <input
-          type="text"
-          id="bottomTextColor"
-          {...register('bottomTextColor')}
-        />
-
-        <label htmlFor="scale">Scale</label>
-        <input type="number" step={0.01} id="scale" {...register('scale')} />
-
-        <label htmlFor="mirrorX">Mirror X</label>
-        <input type="checkbox" id="mirrorX" {...register('mirrorX')} />
-
-        <label htmlFor="mirrorY">Mirror Y</label>
-        <input type="checkbox" id="mirrorY" {...register('mirrorY')} />
-
-        <label htmlFor="rotate">Rotation</label>
-        <input type="checkbox" id="rotate" {...register('rotate')} />
+        <div className="my-4 flex justify-around">
+          <div className="flex gap-4">
+            <label htmlFor="mirrorX">Mirror X</label>
+            <input type="checkbox" id="mirrorX" {...register('mirrorX')} />
+          </div>
+          <div className="flex gap-4">
+            <label htmlFor="mirrorY">Mirror Y</label>
+            <input type="checkbox" id="mirrorY" {...register('mirrorY')} />
+          </div>
+          <div className="flex gap-4">
+            <label htmlFor="rotate">Rotate</label>
+            <input type="checkbox" id="rotate" {...register('rotate')} />
+          </div>
+        </div>
       </form>
 
       <Meme

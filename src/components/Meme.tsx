@@ -107,7 +107,7 @@ export default function Meme({
     mirrorY,
   ]);
 
-  return <canvas ref={ref} />;
+  return <canvas ref={ref} className="mx-auto max-w-[90vw] sm:my-20" />;
 }
 
 interface MemeProps {
