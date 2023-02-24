@@ -17,7 +17,7 @@ export default function App() {
   });
 
   return (
-    <main>
+    <main className="min-h-screen bg-zinc-900 text-zinc-400">
       <form>
         <label htmlFor="imageUrl">Image Url</label>
         <input type="text" id="imageUrl" {...register('imageUrl')} />
